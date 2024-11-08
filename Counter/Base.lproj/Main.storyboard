@@ -30,7 +30,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="counterPlusOne:" destination="BYZ-38-t0r" eventType="touchDown" id="gYH-p2-zVP"/>
+                                    <action selector="plusButtonTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="fNQ-6C-LDF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1a-x6-1C0">
@@ -39,7 +39,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="minus" catalog="system" cornerStyle="capsule"/>
                                 <connections>
-                                    <action selector="counterMinusOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LRR-kV-SH5"/>
+                                    <action selector="minusButtonTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="uXb-nH-nEV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhV-Qh-NPs">
@@ -51,7 +51,7 @@
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="resetAll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JbJ-zI-fgr"/>
+                                    <action selector="resetHistoryTextView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uvn-4R-sFe"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9d2-hf-2k2">
@@ -74,11 +74,11 @@
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
-                        <outlet property="countMinus" destination="m1a-x6-1C0" id="yk9-yb-4Vo"/>
-                        <outlet property="countPlus" destination="La6-li-EHM" id="0Vg-G4-4WC"/>
-                        <outlet property="counter" destination="9d2-hf-2k2" id="UOX-Lx-pdw"/>
-                        <outlet property="history" destination="OEh-HF-9XX" id="cJl-Om-6Tg"/>
-                        <outlet property="reset" destination="mhV-Qh-NPs" id="Kfl-b8-jzd"/>
+                        <outlet property="counterLabel" destination="9d2-hf-2k2" id="cEX-Q3-yrt"/>
+                        <outlet property="historyTextView" destination="OEh-HF-9XX" id="NcX-Nh-ivL"/>
+                        <outlet property="minusButton" destination="m1a-x6-1C0" id="Ibg-sp-pKT"/>
+                        <outlet property="plusButton" destination="La6-li-EHM" id="7Gd-h5-GrX"/>
+                        <outlet property="resetButton" destination="mhV-Qh-NPs" id="hWH-nE-YuV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

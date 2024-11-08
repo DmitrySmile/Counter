@@ -10,12 +10,16 @@ import Foundation
 
 class ViewController: UIViewController {
     
+    @IBOutlet private weak var counterLabel: UILabel!
     
-    @IBOutlet private weak var counter: UILabel!
-    @IBOutlet private weak var history: UITextView!
-    @IBOutlet private weak var reset: UIButton!
-    @IBOutlet private weak var countMinus: UIButton!
-    @IBOutlet private weak var countPlus: UIButton!
+    @IBOutlet weak var historyTextView: UITextView!
+    
+    @IBOutlet weak var resetButton: UIButton!
+    
+    @IBOutlet weak var plusButton: UIButton!
+    
+    @IBOutlet weak var minusButton: UIButton!
+    
     private var result: Int = 0
     private var dateFormatter = DateFormatter()
     private var date = ""
@@ -29,29 +33,29 @@ class ViewController: UIViewController {
         date = dateFormatter.string(from: Date())
     }
     
-    @IBAction private func counterPlusOne(_ sender: Any) {
+    @IBAction func plusButtonTapped(_ sender: Any) {
         dateUpdate()
         result += 1
-        counter.text = "Значение счетчика равно: \(result)"
-        history.text += "\(date) Значение изменено на +1 \n"
+        counterLabel.text = "Значение счетчика равно: \(result)"
+        historyTextView.text += "\(date) Значение изменено на +1 \n"
     }
-    @IBAction private func counterMinusOne(_ sender: Any) {
+    
+    @IBAction func minusButtonTapped(_ sender: Any) {
         dateUpdate()
         if result != 0{
             result -= 1
-            history.text += "\(date) Значение изменено на -1 \n"
+            historyTextView.text += "\(date) Значение изменено на -1 \n"
         }
         else{
-            history.text += "\(date) Попытка уменьшить значение счетчика ниже 0 \n"
+            historyTextView.text += "\(date) Попытка уменьшить значение счетчика ниже 0 \n"
         }
-        counter.text = "Значение счетчика равно: \(result)"
+        counterLabel.text = "Значение счетчика равно: \(result)"
     }
     
-    @IBAction private func resetAll(_ sender: Any) {
+    @IBAction func resetHistoryTextView(_ sender: Any) {
         dateUpdate()
-        history.text += "\(date) Значение сброшено \n"
+        historyTextView.text += "\(date) Значение сброшено \n"
         result = 0
-        counter.text = "Значение счетчика равно: \(result)"
+        counterLabel.text = "Значение счетчика равно: \(result)"
     }
 }
-
